@@ -1,24 +1,17 @@
-import eslintReact from '@eslint-react/eslint-plugin';
-import eslintJs from '@eslint/js';
-import { defineConfig } from 'eslint/config';
-import tseslint from 'typescript-eslint';
-import prettierPlugin from 'eslint-plugin-prettier';
-import prettierConfig from 'eslint-config-prettier';
+import eslintReact from "@eslint-react/eslint-plugin";
+import eslintJs from "@eslint/js";
+import { defineConfig } from "eslint/config";
+import tseslint from "typescript-eslint";
 
 export default defineConfig([
   {
-    files: ['**/*.ts', '**/*.tsx'],
+    files: ["**/*.ts", "**/*.tsx"],
 
     extends: [
       eslintJs.configs.recommended,
       tseslint.configs.recommended,
-      eslintReact.configs['recommended-typescript'],
-      prettierConfig,
+      eslintReact.configs["recommended-typescript"],
     ],
-
-    plugins: {
-      prettier: prettierPlugin,
-    },
 
     languageOptions: {
       parser: tseslint.parser,
@@ -29,8 +22,8 @@ export default defineConfig([
     },
 
     rules: {
-      '@eslint-react/no-missing-key': 'warn',
-      'prettier/prettier': 'warn',
+      "@eslint-react/no-missing-key": "warn",
+      "prettier/prettier": "warn",
     },
   },
 ]);
