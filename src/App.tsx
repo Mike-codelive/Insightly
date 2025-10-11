@@ -1,15 +1,14 @@
-import { Outlet } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import { Outlet } from "react-router-dom";
+import Layout from "./components/Layout";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white text-black dark:text-white dark:bg-black">
+    <main className="min-h-screen bg-white text-black dark:text-white dark:bg-black">
+      <Layout />
 
-      <Navbar />
-
-      <main className="p-6">
+      <main className="lg:ml-14 p-6">
         <Outlet />
       </main>
-    </div>
+    </main>
   );
 }

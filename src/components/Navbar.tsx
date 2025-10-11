@@ -1,11 +1,21 @@
 import { NavLink } from "react-router-dom";
 import ThemeToggle from "./../components/ThemeToggle";
+import Avatar from "./Avatar";
 
-export default function Navbar() {
+type NavbarProps = {
+  onToggleSidebar: () => void;
+};
+
+export default function Navbar({ onToggleSidebar }: NavbarProps) {
   return (
     <nav>
-      <div className="flex h-14 bg-white text-black dark:text-white dark:bg-black dark:border-b dark:border-gray-900 justify-between items-center">
-        <h1 className="capitalize">dashboard</h1>
+      <div className="flex h-14 border-b border-[var(--border-color-light)] dark:border-[var(--border-color-dark)] bg-[var(--bg-color-light)] dark:bg-[var(--bg-color-dark)] justify-end items-center">
+        <button
+          className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-[var(--bg-color)] border border-[var(--border-color)] rounded-md"
+          onClick={onToggleSidebar}
+        >
+          ☰
+        </button>
         <ThemeToggle />
         <NavLink
           to="/"
@@ -15,6 +25,7 @@ export default function Navbar() {
         >
           dashboard
         </NavLink>
+        <Avatar />
       </div>
     </nav>
   );

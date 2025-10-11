@@ -1,8 +1,14 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+:root {
+  --border-color-dark: oklch(21% 0.034 264.665);
+  --border-color-light: oklch(87.2% 0.01 258.338);
+  --bg-color-dark: #121215;
+  --bg-color-light: white;
+}
 
 body * {
-    @apply transition-colors duration-300;
+  @apply transition-colors duration-300;
 }
