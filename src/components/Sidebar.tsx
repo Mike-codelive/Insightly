@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import LogoIcon from "./icons/LogoIcon";
 
 type SidebarProps = {
@@ -6,15 +8,28 @@ type SidebarProps = {
 };
 
 export default function Sidebar({ open, setOpen }: SidebarProps) {
+  const location = useLocation();
+  const [rotating, setRotating] = useState(false);
+
+  useEffect(() => {
+    setRotating(true);
+    const timeout = setTimeout(() => setRotating(false), 600);
+    return () => clearTimeout(timeout);
+  }, [location.pathname]);
+
   return (
     <>
       <aside className="hidden lg:flex absolute left-0 top-0 bottom-0 flex-col items-center w-14 border-r border-[var(--border-color-light)] bg-[var(--bg-color-light)] dark:bg-[var(--bg-color-dark)] dark:border-[var(--border-color-dark)]">
-        <LogoIcon className="stroke-blue-500 mt-3.5" />
+        <LogoIcon
+          className={`stroke-blue-500 mt-3.5 transition-transform duration-700 ease-in-out ${
+            rotating ? "rotate-[360deg]" : "rotate-0"
+          }`}
+        />
       </aside>
 
       <aside
         className={`fixed top-14 bottom-0 left-0 z-20 w-full lg:hidden 
-              transform !transition-transform !duration-300 ease-in-out 
+              transform transition-transform duration-300 ease-in-out 
               ${open ? "translate-x-0" : "-translate-x-full"}`}
       >
         <div className="w-64 h-full bg-[var(--bg-color)] border-r border-[var(--border-color)] p-4">
