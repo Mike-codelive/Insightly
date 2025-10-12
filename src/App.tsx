@@ -6,9 +6,9 @@ export default function App() {
     <main className="min-h-screen bg-white text-black dark:text-white dark:bg-black">
       <Layout />
 
-      <main className="lg:ml-14 p-6">
+      <section className="lg:ml-14 p-6">
         <Outlet />
-      </main>
+      </section>
     </main>
   );
 }

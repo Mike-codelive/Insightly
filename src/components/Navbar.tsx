@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import ThemeToggle from "./../components/ThemeToggle";
 import Avatar from "./Avatar";
+import MenuIcon from "./icons/MenuIcon";
 
 type NavbarProps = {
   onToggleSidebar: () => void;
@@ -14,7 +15,7 @@ export default function Navbar({ onToggleSidebar }: NavbarProps) {
           className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-[var(--bg-color)] border border-[var(--border-color)] rounded-md"
           onClick={onToggleSidebar}
         >
-          ☰
+          <MenuIcon />
         </button>
         <ThemeToggle />
         <NavLink

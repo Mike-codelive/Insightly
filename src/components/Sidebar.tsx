@@ -1,3 +1,5 @@
+import LogoIcon from "./icons/LogoIcon";
+
 type SidebarProps = {
   open: boolean;
   setOpen: (value: boolean) => void;
@@ -6,8 +8,8 @@ type SidebarProps = {
 export default function Sidebar({ open, setOpen }: SidebarProps) {
   return (
     <>
-      <aside className="hidden lg:flex absolute left-0 top-0 bottom-0 flex-col w-14 border-r border-[var(--border-color-light)] bg-[var(--bg-color-light)] dark:bg-[var(--bg-color-dark)] dark:border-[var(--border-color-dark)]">
-        Sidebar content
+      <aside className="hidden lg:flex absolute left-0 top-0 bottom-0 flex-col items-center w-14 border-r border-[var(--border-color-light)] bg-[var(--bg-color-light)] dark:bg-[var(--bg-color-dark)] dark:border-[var(--border-color-dark)]">
+        <LogoIcon className="stroke-blue-500 mt-3.5" />
       </aside>
 
       <aside
