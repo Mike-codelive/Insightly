@@ -26,6 +26,14 @@ export default function Navbar({ onToggleSidebar }: NavbarProps) {
         >
           dashboard
         </NavLink>
+        <NavLink
+          to="/settings"
+          className={({ isActive, isPending }) =>
+            isPending ? "" : isActive ? "text-blue-700" : ""
+          }
+        >
+          settings
+        </NavLink>
         <Avatar />
       </div>
     </nav>
