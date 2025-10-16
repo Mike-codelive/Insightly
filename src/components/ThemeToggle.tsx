@@ -30,7 +30,11 @@ export default function ThemeToggle() {
                  bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200
                  hover:bg-gray-200 dark:hover:bg-gray-500 transition-colors duration-300 cursor-pointer"
     >
-      {theme === "light" ? <MoonIcon /> : <SunIcon />}
+      {theme === "light" ? (
+        <MoonIcon data-testid="moon-icon" />
+      ) : (
+        <SunIcon data-testid="sun-icon" />
+      )}
     </button>
   );
 }
