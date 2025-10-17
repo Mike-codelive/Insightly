@@ -6,7 +6,7 @@ export default function Layout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="">
+    <div>
       <div className="flex flex-col">
         <Navbar onToggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
       </div>
